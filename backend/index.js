@@ -13,13 +13,7 @@ const routeNotFoundError = require("./middlewares/routeNotFoundError");
 const app = express();
 
 // Enable CORS for all routes
-// app.use(cors());
-app.use(
-  cors({
-    credentials: true, //if you are using authentication.
-    origin: "https://wordcraft-server.vercel.app/", // if line above is true, then this CANNOT be '*'
-  })
-);
+app.use(cors());
 
 // work like body-parser
 app.use(express.json());
