@@ -17,7 +17,7 @@ const app = express();
 app.use(
   cors({
     credentials: true, //if you are using authentication.
-    origin: "https://wordcraft-weld.vercel.app", // if line above is true, then this CANNOT be '*'
+    origin: "https://wordcraft-server.vercel.app/", // if line above is true, then this CANNOT be '*'
   })
 );
 
