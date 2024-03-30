@@ -14,11 +14,6 @@ const app = express();
 
 // Enable CORS for all routes
 app.use(cors());
-app.use(
-  cors({
-    origin: "https://wordcraft-weld.vercel.app/login",
-  })
-);
 
 // work like body-parser
 app.use(express.json());
