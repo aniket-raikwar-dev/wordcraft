@@ -4,6 +4,7 @@ import { userIsLogin } from "../redux/actions/userAuthAction";
 import { useDispatch } from "react-redux";
 import { Modal } from "antd";
 import LogoutMotion from "../images/logoutMotion.gif";
+import { userLogout } from "../redux/actions/userLogoutAction";
 
 const navItemData = [
   {
@@ -78,7 +79,8 @@ const Sidebar = () => {
 
   const handleLogout = () => {
     dispatch(userIsLogin(false));
-    localStorage.removeItem("token");
+    // dispatch({ type: "USER_LOGOUT" });
+    localStorage.clear();
     navigate("/login");
   };
 

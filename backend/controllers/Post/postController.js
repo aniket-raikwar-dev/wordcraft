@@ -115,6 +115,7 @@ const toggleBookmarkCtrl = async (req, res, next) => {
 const postDetailCtrl = async (req, res, next) => {
   try {
     const userId = req.userAuth;
+    console.log("req.userAuth: ", req.userAuth);
     let post = await Post.findById(req.params.id)
       .populate("user")
       .populate("comments")

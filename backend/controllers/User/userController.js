@@ -107,7 +107,6 @@ const whoViewedMyProfileCtrl = async (req, res, next) => {
 const getSingleUserDetail = async (req, res, next) => {
   try {
     const users = await User.findById(req.params.id);
-
     res.json({
       status: 200,
       msg: "Single User Profile",

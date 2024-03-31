@@ -29,6 +29,7 @@ const BlogPostDetail = () => {
       const { id } = jwtDecode(token);
       const resp = await api.get(`/users/profile/${id}`);
       const user = resp?.data?.data;
+      console.log("user: ", user);
       setUserData(user);
     } catch (err) {
       console.log("error: ", err);
@@ -103,7 +104,6 @@ const BlogPostDetail = () => {
     setOpen(false);
   };
 
-
   return (
     <>
       {loading ? (
@@ -136,7 +136,9 @@ const BlogPostDetail = () => {
             </div>
           </div>
           <hr />
-          <h2 className="font-bold text-2xl lg:text-3xl mt-5 mb-5">{blogData?.title}</h2>
+          <h2 className="font-bold text-2xl lg:text-3xl mt-5 mb-5">
+            {blogData?.title}
+          </h2>
 
           <div className="h-[250px] lg:h-[350px] mt-5">
             <img
