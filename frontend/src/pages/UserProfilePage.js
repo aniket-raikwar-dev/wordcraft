@@ -415,14 +415,15 @@ const UserProfilePage = () => {
             <div className="user-detail-media">
               <Tabs defaultActiveKey="1" items={tabItems} />
             </div>
-            <div className="flex justify-center">
-            <div
-              style={{ display: "flex" , height: "35px"}}
-              className="btn-create-new-blog mb-2"
-              onClick={() => setIsLogoutModalOpen(true)}
-            >
-              Logout
-            </div>
+
+            <div className="btn-sm-logout flex justify-center">
+              <div
+                style={{ display: "flex", height: "35px" }}
+                className="btn-create-new-blog"
+                onClick={() => setIsLogoutModalOpen(true)}
+              >
+                Logout
+              </div>
             </div>
           </div>
         )}
