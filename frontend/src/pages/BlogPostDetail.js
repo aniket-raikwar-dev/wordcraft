@@ -66,9 +66,9 @@ const BlogPostDetail = () => {
       setBlogData((prevData) => ({
         ...prevData,
         isLiked: !prevData.isLiked,
-        likes: prevData.isLiked
-          ? prevData.likes.filter((like) => like !== userData._id)
-          : [...prevData.likes, userData._id],
+        // likes: prevData.isLiked
+        //   ? prevData.likes.filter((like) => like !== userData._id)
+        //   : [...prevData.likes, userData._id],
       }));
       await api.get(`/post/likes/${blogId}`);
     } catch (error) {

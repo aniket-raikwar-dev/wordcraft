@@ -16,12 +16,12 @@ const postSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category",
     },
-    isLiked: {
-      type: Boolean,
-    },
-    isBookmarked: {
-      type: Boolean,
-    },
+    // isLiked: {
+    //   type: Boolean,
+    // },
+    // isBookmarked: {
+    //   type: Boolean,
+    // },
     numberOfViews: [
       {
         type: mongoose.Schema.Types.ObjectId,
