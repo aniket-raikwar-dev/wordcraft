@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../images/loader.gif";
 import LoginAsana from "../images/asana3.png";
-import { api } from "../services/baseApi";
 import { userIsLogin } from "../redux/actions/userAuthAction";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(true);
@@ -98,12 +98,15 @@ const Register = () => {
           email,
           password,
         };
-        const response = await api.post("users/register", body);
+        const response = await axios.post(
+          "https://wordcraft-qfou.onrender.com/api/v1/users/register",
+          body
+        );
         setIsLoading(false);
         const { token } = response.data;
         localStorage.setItem("token", token);
         dispatch(userIsLogin(true));
-        navigate("/explore");
+        window.open(`${window.location.origin}/explore`, "_self");
       } catch (error) {
         setErrorMessage(error.response.data.message);
         setFormError(true);

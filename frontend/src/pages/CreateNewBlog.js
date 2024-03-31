@@ -233,7 +233,7 @@ const CreateNewBlog = () => {
               wrapperStyle={{}}
               wrapperClass="grid-wrapper"
             />
-            <h2 className="mt-12 font-medium text-xl">
+            <h2 className="mt-12 font-medium text-lg lg:text-xl">
               Publishing Your Blog, It takes some times.
             </h2>
             <p className="mt-1 font-normal text-sm text-[#2d40f0]">

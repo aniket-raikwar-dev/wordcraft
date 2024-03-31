@@ -9,7 +9,6 @@ const Post = require("../../models/Post/Post");
 // POST -> USER REGISTER
 const userRegisterCtrl = async (req, res, next) => {
   const { email, password, name, username } = req.body;
-  console.log("register: ", name, username, email, password);
   try {
     // check email is exist
     const isUserFound = await User.findOne({ email });

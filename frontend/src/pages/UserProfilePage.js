@@ -5,7 +5,6 @@ import { api } from "../services/baseApi";
 import { Grid } from "react-loader-spinner";
 import { UploadOutlined, LoadingOutlined } from "@ant-design/icons";
 import { Button, Upload, Modal, Tooltip } from "antd";
-import { createUserProfileImage } from "../utils/createUserProfile";
 import { jwtDecode } from "jwt-decode";
 import { Link } from "react-router-dom";
 import moment from "moment";
@@ -13,6 +12,7 @@ import { convertHtmlToString } from "../utils/convertHtmlToString";
 import AliceImage from "../images/NoDataFound.png";
 import WorkUnderProgress from "../images/workUnderProgress.png";
 import DiscardImage from "../images/discardImg.png";
+import { createUserProfileImage } from "../utils/createUserProfile";
 
 const UserProfilePage = () => {
   const [userData, setUserData] = useState({});
@@ -87,7 +87,7 @@ const UserProfilePage = () => {
       fetchUserProfileData();
       setUpdating(false);
     } catch (error) {
-      console.log("updated error: ", error);
+      console.log("error: ", error);
     }
   };
 
@@ -194,7 +194,7 @@ const UserProfilePage = () => {
             </div>
           ) : (
             <div className="h-full w-full bg-[#fff] flex flex-col justify-center items-center rounded-md">
-              <img className="w-[50%]" src={AliceImage} alt="" />
+              <img className="alice-img" src={AliceImage} alt="" />
               <h3 className="work-head">No Blog Post Found.</h3>
               <h5 className="stay-tuned">Create New One to See.</h5>
             </div>
@@ -265,7 +265,7 @@ const UserProfilePage = () => {
             </div>
           ) : (
             <div className="h-full w-full bg-[#fff] flex flex-col justify-center items-center rounded-md">
-              <img className="w-[50%]" src={AliceImage} alt="" />
+              <img className="alice-img" src={AliceImage} alt="" />
               <h3 className="work-head">No Blog Post Found.</h3>
               <h5 className="stay-tuned">Please Liked Any Post to See.</h5>
             </div>
@@ -278,7 +278,7 @@ const UserProfilePage = () => {
       label: "Highlights",
       children: (
         <div className="h-full w-full bg-[#fff] flex flex-col justify-center items-center rounded-md">
-          <img className="w-[58%]" src={WorkUnderProgress} alt="" />
+          <img className="alice-img" src={WorkUnderProgress} alt="" />
           <h3 className="work-head">Working Under Progress.</h3>
           <h5 className="stay-tuned">STAY TUNED, FOR MORE UPDATES.</h5>
         </div>
@@ -289,13 +289,14 @@ const UserProfilePage = () => {
       label: "Media",
       children: (
         <div className="h-full w-full bg-[#fff] flex flex-col justify-center items-center rounded-md">
-          <img className="w-[58%]" src={WorkUnderProgress} alt="" />
+          <img className="alice-img" src={WorkUnderProgress} alt="" />
           <h3 className="work-head">Working Under Progress.</h3>
           <h5 className="stay-tuned">STAY TUNED, FOR MORE UPDATES.</h5>
         </div>
       ),
     },
   ];
+
 
   return (
     <div className="main-content-container ">
@@ -315,6 +316,7 @@ const UserProfilePage = () => {
                 {userData?.profilePhoto ? (
                   <img src={userData?.profilePhoto} alt="" />
                 ) : (
+                  userData?.name?.length > 0 &&
                   createUserProfileImage(userData?.name)
                 )}
               </div>

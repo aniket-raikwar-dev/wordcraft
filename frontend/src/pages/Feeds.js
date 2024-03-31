@@ -10,19 +10,8 @@ const Feeds = () => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    getUserProfileData();
-    fetchAllUsers();
+    fetchFeedBlogPosts();
   }, []);
-
-  const getUserProfileData = async () => {
-    try {
-      const response = await api.get("/users/profile");
-      const following = response?.data?.data?.following;
-      fetchFeedBlogPosts(following);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const fetchAllUsers = async () => {
     try {
@@ -34,14 +23,17 @@ const Feeds = () => {
     }
   };
 
-  const fetchFeedBlogPosts = async (following) => {
+  const fetchFeedBlogPosts = async () => {
     try {
       setLoading(true);
       const response = await api.get("post/all");
       const blogs = response.data.data;
+      const followingResponse = await api.get("/users/profile");
+      const following = followingResponse?.data?.data?.following;
       const feedBlogs = blogs.filter((blog) => {
         return following.includes(blog.user._id);
       });
+      fetchAllUsers();
       setBlogs(feedBlogs);
       setLoading(false);
     } catch (error) {

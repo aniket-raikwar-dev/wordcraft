@@ -34,8 +34,6 @@ const MyBlogs = () => {
       const blogs = response.data.data;
       const myBlogs = blogs.filter((blog) => blog.user._id === id);
       setBlogs(myBlogs);
-      console.log("new blogs: ", blogs);
-      console.log("my blogs: ", myBlogs);
       setLoading(false);
     } catch (error) {
       setLoading(false);

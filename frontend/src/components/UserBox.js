@@ -3,7 +3,6 @@ import { createUserProfileImage } from "../utils/createUserProfile";
 import { Link } from "react-router-dom";
 
 const UserBox = ({ user, index }) => {
-    // console.log("user: ", user);
   return (
     <div key={user?._id} className="user-box">
       <div style={{ background: "#000" }} className="user-bg-img">

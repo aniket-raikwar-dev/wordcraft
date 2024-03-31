@@ -45,9 +45,6 @@ const BlogPost = ({ key, blogData, allUsers }) => {
       setBlog((prevData) => ({
         ...prevData,
         isLiked: !prevData.isLiked,
-        likes: prevData.isLiked
-          ? prevData.likes.filter((like) => like !== userData._id)
-          : [...prevData.likes, userData._id],
       }));
       await api.get(`/post/likes/${blog._id}`);
     } catch (error) {
@@ -60,9 +57,6 @@ const BlogPost = ({ key, blogData, allUsers }) => {
       setBlog((prevData) => ({
         ...prevData,
         isBookmarked: !prevData.isBookmarked,
-        bookmarks: prevData.isBookmarked
-          ? prevData.bookmarks.filter((bookmark) => bookmark !== userData._id)
-          : [...prevData.bookmarks, userData._id],
       }));
       await api.get(`/post/bookmark/${blog._id}`);
     } catch (error) {
@@ -83,6 +77,7 @@ const BlogPost = ({ key, blogData, allUsers }) => {
     setOpen(false);
   };
 
+
   return (
     <>
       <div key={key} className="post-container">
@@ -93,6 +88,7 @@ const BlogPost = ({ key, blogData, allUsers }) => {
                 {blog?.user?.profilePhoto ? (
                   <img src={blog?.user?.profilePhoto} alt="" />
                 ) : (
+                  blog?.user?.name?.length > 0 &&
                   createUserProfileImage(blog?.user?.name)
                 )}
               </div>

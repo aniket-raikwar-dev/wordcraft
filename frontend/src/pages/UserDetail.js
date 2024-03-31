@@ -101,7 +101,7 @@ const UserDetail = () => {
             </div>
           ) : (
             <div className="h-full w-full bg-[#fff] flex flex-col justify-center items-center rounded-md">
-              <img className="w-[50%]" src={AliceImage} alt="" />
+              <img className="alice-img" src={AliceImage} alt="" />
               <h3 className="work-head">No Blog Post Found.</h3>
               <h5 className="stay-tuned">Create New One to See.</h5>
             </div>
@@ -169,7 +169,7 @@ const UserDetail = () => {
             </div>
           ) : (
             <div className="h-full w-full bg-[#fff] flex flex-col justify-center items-center rounded-md">
-              <img className="w-[50%]" src={AliceImage} alt="" />
+              <img className="alice-img" src={AliceImage} alt="" />
               <h3 className="work-head">No Blog Post Found.</h3>
               <h5 className="stay-tuned">Please Liked Any Post to See.</h5>
             </div>
@@ -182,7 +182,7 @@ const UserDetail = () => {
       label: "Highlights",
       children: (
         <div className="h-full w-full bg-[#fff] flex flex-col justify-center items-center rounded-md">
-          <img className="w-[58%]" src={WorkUnderProgress} alt="" />
+          <img className="alice-img" src={WorkUnderProgress} alt="" />
           <h3 className="work-head">Working Under Progress.</h3>
           <h5 className="stay-tuned">STAY TUNED, FOR MORE UPDATES.</h5>
         </div>
@@ -193,105 +193,13 @@ const UserDetail = () => {
       label: "Media",
       children: (
         <div className="h-full w-full bg-[#fff] flex flex-col justify-center items-center rounded-md">
-          <img className="w-[58%]" src={WorkUnderProgress} alt="" />
+          <img className="alice-img" src={WorkUnderProgress} alt="" />
           <h3 className="work-head">Working Under Progress.</h3>
           <h5 className="stay-tuned">STAY TUNED, FOR MORE UPDATES.</h5>
         </div>
       ),
     },
   ];
-
-  // const tabItems = [
-  //   {
-  //     key: "1",
-  //     label: "Posts",
-  //     children: (
-  //       <div class="user-media-grid-container">
-  //         {userData?.posts?.length > 0 ? (
-  //           userData?.posts?.map((post) => (
-  //             <div key={post?._id} class="user-media-post-box">
-  //               <div>
-  //                 <div className="media-post-banner">
-  //                   <img src={post?.image} alt="" />
-  //                 </div>
-  //                 <h4 className="font-medium px-2 pt-1">{post?.title}</h4>
-  //                 <p className="font-normal text-xs px-2">
-  //                   {convertHtmlToString(post?.description)}
-  //                 </p>
-  //               </div>
-  //               <div className="media-2nd-child">
-  //                 <div>
-  //                   <svg
-  //                     xmlns="http://www.w3.org/2000/svg"
-  //                     viewBox="0 0 24 24"
-  //                     fill="currentColor"
-  //                   >
-  //                     <path d="M13.0607 8.11097L14.4749 9.52518C17.2086 12.2589 17.2086 16.691 14.4749 19.4247L14.1214 19.7782C11.3877 22.5119 6.95555 22.5119 4.22188 19.7782C1.48821 17.0446 1.48821 12.6124 4.22188 9.87874L5.6361 11.293C3.68348 13.2456 3.68348 16.4114 5.6361 18.364C7.58872 20.3166 10.7545 20.3166 12.7072 18.364L13.0607 18.0105C15.0133 16.0578 15.0133 12.892 13.0607 10.9394L11.6465 9.52518L13.0607 8.11097ZM19.7782 14.1214L18.364 12.7072C20.3166 10.7545 20.3166 7.58872 18.364 5.6361C16.4114 3.68348 13.2456 3.68348 11.293 5.6361L10.9394 5.98965C8.98678 7.94227 8.98678 11.1081 10.9394 13.0607L12.3536 14.4749L10.9394 15.8891L9.52518 14.4749C6.79151 11.7413 6.79151 7.30911 9.52518 4.57544L9.87874 4.22188C12.6124 1.48821 17.0446 1.48821 19.7782 4.22188C22.5119 6.95555 22.5119 11.3877 19.7782 14.1214Z"></path>
-  //                   </svg>
-  //                 </div>
-  //                 <div>
-  //                   <div>
-  //                     <svg
-  //                       xmlns="http://www.w3.org/2000/svg"
-  //                       viewBox="0 0 24 24"
-  //                       fill="rgba(227,25,75,1)"
-  //                     >
-  //                       <path d="M12.001 4.52853C14.35 2.42 17.98 2.49 20.2426 4.75736C22.5053 7.02472 22.583 10.637 20.4786 12.993L11.9999 21.485L3.52138 12.993C1.41705 10.637 1.49571 7.01901 3.75736 4.75736C6.02157 2.49315 9.64519 2.41687 12.001 4.52853Z"></path>
-  //                     </svg>
-  //                     <p>76</p>
-  //                   </div>
-  //                   <div className="ml-4">
-  //                     <svg
-  //                       xmlns="http://www.w3.org/2000/svg"
-  //                       viewBox="0 0 24 24"
-  //                       fill="rgba(28,91,239,1)"
-  //                     >
-  //                       <path d="M7.29117 20.8242L2 22L3.17581 16.7088C2.42544 15.3056 2 13.7025 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.2975 22 8.6944 21.5746 7.29117 20.8242Z"></path>
-  //                     </svg>
-  //                     <p>12</p>
-  //                   </div>
-  //                 </div>
-  //               </div>
-  //             </div>
-  //           ))
-  //         ) : (
-  //           <div></div>
-  //         )}
-  //       </div>
-  //     ),
-  //   },
-  //   {
-  //     key: "2",
-  //     label: "Likes",
-  //     children: "Content of Tab Pane 2",
-  //   },
-  //   {
-  //     key: "3",
-  //     label: "Highlights",
-  //     children: (
-  //       <div className="media-working-black">
-  //         <div>
-  //           <img src={workIMG3} alt="" />
-  //         </div>
-  //         <h3 className="work-head">Working Under Progress.</h3>
-  //         <h5 className="stay-tuned">STAY TUNED, FOR MORE UPDATES.</h5>
-  //       </div>
-  //     ),
-  //   },
-  //   {
-  //     key: "4",
-  //     label: "Media",
-  //     children: (
-  //       <div className="media-working">
-  //         <div>
-  //           <img src={workIMG} alt="" />
-  //         </div>
-  //         <h3 className="work-head">Working Under Progress.</h3>
-  //         <h5 className="stay-tuned">STAY TUNED, FOR MORE UPDATES.</h5>
-  //       </div>
-  //     ),
-  //   },
-  // ];
 
   return (
     <div className="main-content-container ">
@@ -311,6 +219,7 @@ const UserDetail = () => {
                 {userData?.profilePhoto ? (
                   <img src={userData?.profilePhoto} alt="" />
                 ) : (
+                  userData?.name?.length > 0 &&
                   createUserProfileImage(userData?.name)
                 )}
               </div>

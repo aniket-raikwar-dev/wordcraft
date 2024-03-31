@@ -59,7 +59,7 @@ const Navbar = () => {
             <div style={{ height: "100%" }} className="flex-div">
               <Dropdown
                 overlay={customNotification}
-                placement="bottomRight"
+                placement="bottom"
                 arrow
               >
                 <div className="noti-icon">

@@ -40,7 +40,7 @@ const Bookmark = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      console.log(error);
+      console.log("error: ", error);
     }
   };
 

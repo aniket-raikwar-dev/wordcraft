@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { api } from "../services/baseApi";
 import { Skeleton } from "antd";
-// import { createUserProfileImage } from "../utils/createUserProfile";
 import { jwtDecode } from "jwt-decode";
 import moment from "moment";
 import CommentSection from "../components/CommentSection";
 import { convertHtmlToString } from "../utils/convertHtmlToString";
+// import { createUserProfileImage } from "../utils/createUserProfile";
 
 const BlogPostDetail = () => {
   const [open, setOpen] = useState(false);
@@ -29,7 +29,6 @@ const BlogPostDetail = () => {
       const { id } = jwtDecode(token);
       const resp = await api.get(`/users/profile/${id}`);
       const user = resp?.data?.data;
-      console.log("user: ", user);
       setUserData(user);
     } catch (err) {
       console.log("error: ", err);
@@ -66,9 +65,6 @@ const BlogPostDetail = () => {
       setBlogData((prevData) => ({
         ...prevData,
         isLiked: !prevData.isLiked,
-        // likes: prevData.isLiked
-        //   ? prevData.likes.filter((like) => like !== userData._id)
-        //   : [...prevData.likes, userData._id],
       }));
       await api.get(`/post/likes/${blogId}`);
     } catch (error) {
@@ -81,9 +77,6 @@ const BlogPostDetail = () => {
       setBlogData((prevData) => ({
         ...prevData,
         isBookmarked: !prevData.isBookmarked,
-        bookmarks: prevData.isBookmarked
-          ? prevData.bookmarks.filter((bookmark) => bookmark !== userData._id)
-          : [...prevData.bookmarks, userData._id],
       }));
       await api.get(`/post/bookmark/${blogId}`);
     } catch (error) {
@@ -118,7 +111,7 @@ const BlogPostDetail = () => {
                 {blogData?.user?.profilePhoto ? (
                   <img src={blogData?.user?.profilePhoto} alt="" />
                 ) : (
-                  "AR"
+                  "CR"
                 )}
               </div>
               <div className="new-user-name-post">
@@ -230,11 +223,11 @@ const BlogPostDetail = () => {
                   <div key={blog?._id} class="blog-detail-post-box">
                     <div onClick={() => handleNavigate(blog?._id)}>
                       <div className="blog-detail-post-banner">
-                        <img src={blog.image} alt="" />
+                        <img src={blog?.image} alt="" />
                       </div>
                       <h4 className="font-semibold text-lg px-2 pt-1">
-                        {blog?.title.length > 24
-                          ? `${blog?.title.slice(0, 24)}...`
+                        {blog?.title?.length > 24
+                          ? `${blog?.title?.slice(0, 24)}...`
                           : blog?.title}
                       </h4>
                       <p className="font-normal text-sm px-2">

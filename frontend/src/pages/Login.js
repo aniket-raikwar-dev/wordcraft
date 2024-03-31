@@ -5,6 +5,7 @@ import LoginAsana from "../images/asana2.png";
 import { api } from "../services/baseApi";
 import { useDispatch } from "react-redux";
 import { userIsLogin } from "../redux/actions/userAuthAction";
+import axios from "axios";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(true);
@@ -67,15 +68,18 @@ const Login = () => {
     setIsLoading(true);
     if (!(await checkValidation())) {
       try {
-        const response = await api.post("users/login", { email, password });
+        const response = await axios.post(
+          "https://wordcraft-qfou.onrender.com/api/v1/users/login",
+          {
+            email,
+            password,
+          }
+        );
         setIsLoading(false);
         const { token } = response.data;
-        console.log("Response: ", response);
-        console.log("token: ", token);
         localStorage.setItem("token", token);
         dispatch(userIsLogin(true));
         window.open(`${window.location.origin}/explore`, "_self");
-        // window.location.reload();
       } catch (error) {
         setIsLoading(false);
         setErrorMessage(error.response.data.message);
