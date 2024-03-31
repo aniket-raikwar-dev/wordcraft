@@ -312,7 +312,7 @@ const UserProfilePage = () => {
   ];
 
   return (
-    <div className="main-content-container ">
+    <div className="main-content-container">
       <h2 className="current-page-head">User Profile</h2>
       <div className="scrollable-container">
         {loading ? (
