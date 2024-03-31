@@ -1481,7 +1481,8 @@
   .scrollable-container {
     height: 70vh;
     overflow-y: auto;
-    padding-bottom: 0px;
+    padding-bottom: 0px !important;
+    background-color: green;
   }
   .current-page-head {
     display: none;
