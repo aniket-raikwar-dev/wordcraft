@@ -1596,4 +1596,8 @@
   .profile-logout {
     display: flex;
   }
+  .create-blog-box {
+    height: 36vh !important;
+    background-color: red;
+  }
 }
