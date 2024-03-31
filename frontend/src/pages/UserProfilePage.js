@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import UserBanner from "../images/userBackgroundBanner.png";
 import { Skeleton, Tabs } from "antd";
+import { userIsLogin } from "../redux/actions/userAuthAction";
+import { useDispatch } from "react-redux";
 import { api } from "../services/baseApi";
 import { Grid } from "react-loader-spinner";
 import { UploadOutlined, LoadingOutlined } from "@ant-design/icons";
 import { Button, Upload, Modal, Tooltip } from "antd";
 import { jwtDecode } from "jwt-decode";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import moment from "moment";
 import { convertHtmlToString } from "../utils/convertHtmlToString";
 import AliceImage from "../images/NoDataFound.png";
 import WorkUnderProgress from "../images/workUnderProgress.png";
 import DiscardImage from "../images/discardImg.png";
 import { createUserProfileImage } from "../utils/createUserProfile";
+import LogoutMotion from "../images/logoutMotion.gif";
 
 const UserProfilePage = () => {
   const [userData, setUserData] = useState({});
@@ -28,9 +31,12 @@ const UserProfilePage = () => {
   const [uploadingImg, setUploadingImg] = useState(false);
   const [likedPosts, setLikedPosts] = useState([]);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
   const [deletedBlogId, setDeletedBlogId] = useState("");
   const token = localStorage.getItem("token");
   const { id } = jwtDecode(token);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchUserProfileData();
@@ -121,7 +127,15 @@ const UserProfilePage = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
     setIsDeleteOpen(false);
+    setIsLogoutModalOpen(false);
   };
+
+  const handleLogout = () => {
+    dispatch(userIsLogin(false));
+    localStorage.clear();
+    navigate("/login");
+  };
+
   const tabItems = [
     {
       key: "1",
@@ -297,7 +311,6 @@ const UserProfilePage = () => {
     },
   ];
 
-
   return (
     <div className="main-content-container ">
       <h2 className="current-page-head">User Profile</h2>
@@ -398,11 +411,18 @@ const UserProfilePage = () => {
                 <p>FOLLOWING: 3</p>
               </div>
             </div>
+
             <div className="user-detail-media">
               <Tabs defaultActiveKey="1" items={tabItems} />
             </div>
           </div>
         )}
+      </div>
+      <div
+        className="edit-profile-btn profile-logout"
+        onClick={() => setIsLogoutModalOpen(true)}
+      >
+        Logout
       </div>
       <Modal
         title="Edit Profile"
@@ -530,6 +550,27 @@ const UserProfilePage = () => {
           </div>
           <div className="logout-btn" onClick={handleDeleteBlog}>
             <p>Delete</p>
+          </div>
+        </div>
+      </Modal>
+      <Modal
+        title="Sign Out"
+        open={isLogoutModalOpen}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <div className="flex flex-col items-center">
+          <img src={LogoutMotion} alt="" />
+          <p className="text-center text-[15px] font-medium">
+            Are You Sure, You Want to Sign Out?
+          </p>
+        </div>
+        <div className="flex justify-end mt-12">
+          <div onClick={handleCancel} className="logout-cancel">
+            <p>Cancel</p>
+          </div>
+          <div onClick={handleLogout} className="logout-btn">
+            <p>Sign Out</p>
           </div>
         </div>
       </Modal>

@@ -1328,6 +1328,9 @@
 .alice-img {
   width: 52%;
 }
+.profile-logout {
+  display: none;
+}
 
 @media only screen and (max-width: 767px) {
   .mobile {
@@ -1476,7 +1479,7 @@
     height: 280px;
   }
   .scrollable-container {
-    height: 93%;
+    height: 70vh;
     overflow-y: auto;
     padding-bottom: 0px;
   }
@@ -1589,5 +1592,8 @@
     img {
       width: 400px;
     }
+  }
+  .profile-logout {
+    display: flex;
   }
 }
