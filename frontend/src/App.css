@@ -1601,4 +1601,10 @@
     height: 36vh !important;
     background-color: red;
   }
+
+  .main-content-container {
+    width: 100%;
+    height: 90%;
+    background-color: #004aec;
+  }
 }
