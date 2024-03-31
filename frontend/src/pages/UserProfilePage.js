@@ -415,15 +415,17 @@ const UserProfilePage = () => {
             <div className="user-detail-media">
               <Tabs defaultActiveKey="1" items={tabItems} />
             </div>
+            <div
+              style={{ display: "flex" , height: "35px"}}
+              className="btn-create-new-blog mb-2"
+              onClick={() => setIsLogoutModalOpen(true)}
+            >
+              Logout
+            </div>
           </div>
         )}
       </div>
-      <div
-        className="edit-profile-btn profile-logout"
-        onClick={() => setIsLogoutModalOpen(true)}
-      >
-        Logout
-      </div>
+
       <Modal
         title="Edit Profile"
         open={isModalOpen}
