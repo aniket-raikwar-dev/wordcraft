@@ -1582,4 +1582,9 @@
   .alice-img {
     width: 90%;
   }
+
+  .btn-discard,
+  .btn-save {
+    display: flex !important;
+  }
 }

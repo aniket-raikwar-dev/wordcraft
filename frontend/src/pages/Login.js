@@ -70,10 +70,12 @@ const Login = () => {
         const response = await api.post("users/login", { email, password });
         setIsLoading(false);
         const { token } = response.data;
+        console.log("Response: ", response);
+        console.log("token: ", token);
         localStorage.setItem("token", token);
         dispatch(userIsLogin(true));
         navigate("/explore");
-        window.location.reload();
+        // window.location.reload();
       } catch (error) {
         setIsLoading(false);
         setErrorMessage(error.response.data.message);
