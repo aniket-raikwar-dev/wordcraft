@@ -74,8 +74,7 @@ const Login = () => {
         console.log("token: ", token);
         localStorage.setItem("token", token);
         dispatch(userIsLogin(true));
-        // navigate("/explore");
-        window.open("http://localhost:3000/explore", "_self");
+        window.open(`${window.location.origin}/explore`, "_self");
         // window.location.reload();
       } catch (error) {
         setIsLoading(false);
