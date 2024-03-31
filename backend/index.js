@@ -38,3 +38,7 @@ const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
   console.log("Server Listening on Port -> ", PORT);
 });
+
+app.get("/api", (req, res) => {
+  return res.json("API VERSION 1");
+});
