@@ -281,9 +281,9 @@ const UserDetail = () => {
               </div>
 
               <div className="follower-box">
-                <p>FOLLOWERS: 12</p>
+                <p>FOLLOWERS: {userData?.followers?.length}</p>
                 <div className="vr-line"></div>
-                <p>FOLLOWING: 3</p>
+                <p>FOLLOWING: {userData?.following?.length}</p>
               </div>
             </div>
             <div className="user-detail-media">

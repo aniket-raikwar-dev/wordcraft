@@ -144,6 +144,7 @@ const Register = () => {
       </div>
       <div className="login-right-container">
         <div className="form-container">
+          <h3 className="mobile-logo">WordCraft.</h3>
           <h3 className="sign-in-text">Sign Up and continue.</h3>
           <div className="reg-input-field">
             <h4>Name</h4>

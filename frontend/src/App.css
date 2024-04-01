@@ -756,11 +756,10 @@
   color: #545454;
 }
 #log-text2 {
-  font-size: 12px;
+  font-size: 16px;
   margin-top: 20px;
   letter-spacing: 0.5px;
   font-weight: 400;
-  text-transform: uppercase;
   color: #363636;
 }
 
@@ -1336,6 +1335,9 @@
 .btn-sm-logout {
   display: none;
 }
+.mobile-logo {
+  display: none;
+}
 
 @media only screen and (max-width: 767px) {
   .mobile {
@@ -1618,5 +1620,13 @@
     border-top: 0.5px solid #aeaeae;
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+  .mobile-logo {
+    display: flex;
+    color: rgb(62, 62, 236);
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
   }
 }
