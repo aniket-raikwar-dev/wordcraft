@@ -99,8 +99,8 @@ const Register = () => {
           password,
         };
         const response = await axios.post(
-          "https://wordcraft-qfou.onrender.com/api/v1/users/register",
-          // "http://localhost:8000/api/v1/users/register",
+          // "https://wordcraft-qfou.onrender.com/api/v1/users/register",
+          "http://localhost:8000/api/v1/users/register",
           body
         );
         setIsLoading(false);
