@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Drawer, Input } from "antd";
+import moment from "moment";
 import { api } from "../services/baseApi";
 import { createUserProfileImage } from "../utils/createUserProfile";
 import AliceImage from "../images/NoDataFound.png";
@@ -132,7 +133,9 @@ const CommentSection = ({
                       >
                         {comment?.user?.name}
                       </p>
-                      <div className="comment-date">12 Dec, 2016</div>
+                      <div className="comment-date">
+                        {moment(comment?.createdAt).format("D MMMM, YYYY")}
+                      </div>
                     </div>
                     <p className="w-[270px]">{comment.description}</p>
                   </div>
