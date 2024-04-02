@@ -5,9 +5,9 @@
 #### Live Demo Link: https://wordcraft-weld.vercel.app/login
 
 ### Tech Stack :
-\nFrontend: React JS, TailwindCSS, Ant Design
-\nBackend: Node JS, Express JS
-Database: Mongo DB
+####Frontend: React JS, TailwindCSS, Ant Design
+####Backend: Node JS, Express JS
+####Database: Mongo DB
 
 ### Glimpse: Here, I added some ui picture of the application: 
 
