@@ -258,18 +258,20 @@ const userBlockedCtrl = async (req, res, next) => {
 const userUpdateCtrl = async (req, res, next) => {
   const { name, username, bio, location, link } = req.body;
   try {
-    const user = await User.findByIdAndUpdate(
-      req.userAuth,
-      {
-        name,
-        username,
-        profilePhoto: req?.file ? req.file.path : "",
-        bio,
-        location,
-        link,
-      },
-      { new: true, runValidators: false }
-    );
+    const updateFields = {
+      name,
+      username,
+      bio,
+      location,
+      link,
+    };
+    if (req.file) {
+      updateFields.profilePhoto = req.file.path;
+    }
+    const user = await User.findByIdAndUpdate(req.userAuth, updateFields, {
+      new: true,
+      runValidators: false,
+    });
     res.json({
       status: "success",
       data: user,

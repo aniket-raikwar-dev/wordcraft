@@ -6,32 +6,35 @@ import { jwtDecode } from "jwt-decode";
 import moment from "moment";
 import CommentSection from "../components/CommentSection";
 import { convertHtmlToString } from "../utils/convertHtmlToString";
-// import { createUserProfileImage } from "../utils/createUserProfile";
+import { createUserProfileImage } from "../utils/createUserProfile";
 
 const BlogPostDetail = () => {
+  const { id: blogId } = useParams();
   const [open, setOpen] = useState(false);
   const [blogData, setBlogData] = useState({});
   const [loading, setLoading] = useState(false);
   const [userData, setUserData] = useState({});
   const [commentCount, setCommentCount] = useState(0);
   const [otherBlogs, setOtherBlogs] = useState([]);
-  const { id: blogId } = useParams();
+  const [currentBlogId, setCurrentBlogId] = useState(blogId);
+
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchBlogPostDetail();
     fetchAuthorDetail();
-  }, []);
+  }, [currentBlogId]);
 
-  const fetchAuthorDetail = async () => {
+  const fetchBlogPostDetail = async (currentId = blogId) => {
     try {
-      const token = localStorage.getItem("token");
-      const { id } = jwtDecode(token);
-      const resp = await api.get(`/users/profile/${id}`);
-      const user = resp?.data?.data;
-      setUserData(user);
-    } catch (err) {
-      console.log("error: ", err);
+      setLoading(true);
+      const resp = await api.get(`/post/detail/${currentId}`);
+      const data = resp?.data?.data;
+      setBlogData(data);
+      fetchBlogUserDetail(data?.user?._id);
+      setLoading(false);
+    } catch (error) {
+      console.log("error: ", error);
     }
   };
 
@@ -47,16 +50,15 @@ const BlogPostDetail = () => {
     }
   };
 
-  const fetchBlogPostDetail = async (currentId = blogId) => {
+  const fetchAuthorDetail = async () => {
     try {
-      setLoading(true);
-      const resp = await api.get(`/post/detail/${currentId}`);
-      const data = resp?.data?.data;
-      setBlogData(data);
-      fetchBlogUserDetail(data?.user?._id);
-      setLoading(false);
-    } catch (error) {
-      console.log("error: ", error);
+      const token = localStorage.getItem("token");
+      const { id } = jwtDecode(token);
+      const resp = await api.get(`/users/profile/${id}`);
+      const user = resp?.data?.data;
+      setUserData(user);
+    } catch (err) {
+      console.log("error: ", err);
     }
   };
 
@@ -65,6 +67,9 @@ const BlogPostDetail = () => {
       setBlogData((prevData) => ({
         ...prevData,
         isLiked: !prevData.isLiked,
+        likes: prevData.isLiked
+          ? prevData.likes.filter((like) => like !== userData._id)
+          : [...prevData.likes, userData._id],
       }));
       await api.get(`/post/likes/${blogId}`);
     } catch (error) {
@@ -77,6 +82,9 @@ const BlogPostDetail = () => {
       setBlogData((prevData) => ({
         ...prevData,
         isBookmarked: !prevData.isBookmarked,
+        bookmarks: prevData.isBookmarked
+          ? prevData.bookmarks.filter((bookmark) => bookmark !== userData._id)
+          : [...prevData.bookmarks, userData._id],
       }));
       await api.get(`/post/bookmark/${blogId}`);
     } catch (error) {
@@ -85,8 +93,8 @@ const BlogPostDetail = () => {
   };
 
   const handleNavigate = (blogId) => {
+    setCurrentBlogId(blogId);
     navigate(`/blog/${blogId}`);
-    fetchBlogPostDetail(blogId);
   };
 
   const showDrawer = () => {
@@ -111,7 +119,8 @@ const BlogPostDetail = () => {
                 {blogData?.user?.profilePhoto ? (
                   <img src={blogData?.user?.profilePhoto} alt="" />
                 ) : (
-                  "CR"
+                  blogData?.user?.name?.length > 0 &&
+                  createUserProfileImage(blogData?.user?.name)
                 )}
               </div>
               <div className="new-user-name-post">

@@ -2,10 +2,26 @@ import React from "react";
 import { createUserProfileImage } from "../utils/createUserProfile";
 import { Link } from "react-router-dom";
 
+const bannerColor = [
+  "#004aec",
+  "#18b47b",
+  "#496989",
+  "#754ad8",
+  "#293278",
+  "#f62e50",
+  "#222831",
+  "#06563c",
+  "#087c72",
+  "#525CEB",
+];
+
 const UserBox = ({ user, index }) => {
   return (
     <div key={user?._id} className="user-box">
-      <div style={{ background: "#000" }} className="user-bg-img">
+      <div
+        style={{ background: "#000" }}
+        className="user-bg-img"
+      >
         Think Bold, Do More.
       </div>
       <div className="user-profile-pic">

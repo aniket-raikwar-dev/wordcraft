@@ -7,18 +7,7 @@ import { setUserData } from "../redux/actions/userDataAction";
 import { jwtDecode } from "jwt-decode";
 import UserBox from "../components/UserBox";
 
-const bannerColor = [
-  "#004aec",
-  "#18b47b",
-  "#496989",
-  "#754ad8",
-  "#293278",
-  "#f62e50",
-  "#222831",
-  "#06563c",
-  "#087c72",
-  "#525CEB",
-];
+
 
 const WordCraftUser = () => {
   const [users, setUsers] = useState([]);
