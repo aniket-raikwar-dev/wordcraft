@@ -5,6 +5,12 @@ A Social Media Blog Application which is inspired by DEV Community, HashNode and
 #### Live Demo Link: https://wordcraft-weld.vercel.app/login
 
 ### Tech Stack :
+![1174949_js_react js_logo_react_react native_icon](https://github.com/aniket-6234/wordcraft/assets/65860069/1aace54d-fb8e-4243-89c3-04d562798786) ![icons8-tailwind-css-48](https://github.com/aniket-6234/wordcraft/assets/65860069/de1f55a7-139a-4760-a7b7-3d1875f494c1) ![icons8-express-js-50](https://github.com/aniket-6234/wordcraft/assets/65860069/bdcaebdd-9e27-4d9c-b817-d86c38052cf3) ![1012818_code_development_logo_nodejs_icon](https://github.com/aniket-6234/wordcraft/assets/65860069/638fbaee-60d6-42f4-999b-4fad3b17e2e7) ![1012822_code_development_logo_mongodb_programming_icon](https://github.com/aniket-6234/wordcraft/assets/65860069/bdd35e16-7f3d-44f9-8d09-6634f7cafcd1) 
+
+
+
+
+
 
 
 Glimpse: Here, I added some ui picture of the application: 
