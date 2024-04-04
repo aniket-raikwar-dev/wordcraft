@@ -1,11 +1,19 @@
-# WordCraft
+![mongodb](https://github.com/aniket-6234/wordcraft/assets/65860069/38077d14-c0a6-4bae-80a7-2019b4e4a76c)# WordCraft
 
 A Social Media Blog Application which is inspired by DEV Community, HashNode and Medium.com, the goal is very simple to provide the better user experience than other compititor with the advanced feature and comes with a responsive design.
 
 #### Live Demo Link: https://wordcraft-weld.vercel.app/login
 
 ### Tech Stack :
-![html5-fill](https://github.com/aniket-6234/wordcraft/assets/65860069/0223dd80-293b-4253-9017-31c972ccbdc9)  ![css3-fill](https://github.com/aniket-6234/wordcraft/assets/65860069/cf2f92c0-ebf0-478f-87af-1441f0638cb2)  ![javascript-fill](https://github.com/aniket-6234/wordcraft/assets/65860069/c89cdcdd-ff18-4416-8332-7919d8b59c80)  ![nodejs-line](https://github.com/aniket-6234/wordcraft/assets/65860069/e12cbcc1-0132-4f5b-97bc-de4b45511a6a) ![reactjs-line](https://github.com/aniket-6234/wordcraft/assets/65860069/fc04a99e-baf2-475d-9e9a-dd32c0c6baab)  ![nodejs-line](https://github.com/aniket-6234/wordcraft/assets/65860069/8a8efe01-0cd6-4c10-a6c1-615ca8a62e2c)
+![html5-fill](https://github.com/aniket-6234/wordcraft/assets/65860069/0223dd80-293b-4253-9017-31c972ccbdc9)    ![css3-fill](https://github.com/aniket-6234/wordcraft/assets/65860069/cf2f92c0-ebf0-478f-87af-1441f0638cb2)    ![javascript-fill](https://github.com/aniket-6234/wordcraft/assets/65860069/c89cdcdd-ff18-4416-8332-7919d8b59c80)    ![reactjs-line](https://github.com/aniket-6234/wordcraft/assets/65860069/fc04a99e-baf2-475d-9e9a-dd32c0c6baab)    ![nodejs-line](https://github.com/aniket-6234/wordcraft/assets/65860069/8a8efe01-0cd6-4c10-a6c1-615ca8a62e2c)    ![Uploading mo<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+   <circle cx="512" cy="512" r="512" style="fill:#13aa52"/>
+   <path d="M648.86 449.44c-32.34-142.73-108.77-189.66-117-207.59-9-12.65-18.12-35.15-18.12-35.15-.15-.38-.39-1.05-.67-1.7-.93 12.65-1.41 17.53-13.37 30.29-18.52 14.48-113.54 94.21-121.27 256.37-7.21 151.24 109.25 241.36 125 252.85l1.79 1.27v-.11c.1.76 5 36 8.44 73.34H526a726.68 726.68 0 0 1 13-78.53l1-.65a204.48 204.48 0 0 0 20.11-16.45l.72-.65c33.48-30.93 93.67-102.47 93.08-216.53a347.07 347.07 0 0 0-5.05-56.76zM512.35 659.12s0-212.12 7-212.08c5.46 0 12.53 273.61 12.53 273.61-9.72-1.17-19.53-45.03-19.53-61.53z" style="fill:#fff"/>
+</svg>ngodb.svg…]()    ![png-transparent-jwt-io-json-web-token-hd-logo](https://github.com/aniket-6234/wordcraft/assets/65860069/328c1ec0-9c8f-4763-acbc-40905b60febc)    ![ant-design-icon-512x512-xbdsnx83](https://github.com/aniket-6234/wordcraft/assets/65860069/d09b7aa3-980b-4b4a-9191-a1440fea5d69)   ![png-transparent-tailwind-css-hd-logo](https://github.com/aniket-6234/wordcraft/assets/65860069/230e0d36-7fbc-42d7-ab29-0291135ab0a0)     
+
+
+
+
 
  
 
