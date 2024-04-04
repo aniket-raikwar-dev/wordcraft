@@ -1,15 +1,13 @@
 # WordCraft
 
-#### A Social Media Blog Application which is inspired by DEV Community, HashNode and Medium.com, the goal is very simple to provide the better user experience that above list application with the advanced feature with a responsive design.
+A Social Media Blog Application which is inspired by DEV Community, HashNode and Medium.com, the goal is very simple to provide the better user experience than other compititor with the advanced feature and comes with a responsive design.
 
 #### Live Demo Link: https://wordcraft-weld.vercel.app/login
 
 ### Tech Stack :
-#### Frontend: React JS, TailwindCSS, Ant Design
-#### Backend: Node JS, Express JS
-#### Database: Mongo DB
 
-### Glimpse: Here, I added some ui picture of the application: 
+
+Glimpse: Here, I added some ui picture of the application: 
 
 ### 1. Login Page: 
 <img width="1440" alt="Screenshot 2024-04-02 at 11 39 36 AM" src="https://github.com/aniket-6234/wordcraft/assets/65860069/61b67437-c2de-4418-826d-e9df0a05a876">
