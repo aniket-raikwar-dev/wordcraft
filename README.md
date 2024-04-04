@@ -5,7 +5,12 @@ A Social Media Blog Application which is inspired by DEV Community, HashNode and
 #### Live Demo Link: https://wordcraft-weld.vercel.app/login
 
 ### Tech Stack :
-![1174949_js_react js_logo_react_react native_icon](https://github.com/aniket-6234/wordcraft/assets/65860069/1aace54d-fb8e-4243-89c3-04d562798786) ![icons8-tailwind-css-48](https://github.com/aniket-6234/wordcraft/assets/65860069/de1f55a7-139a-4760-a7b7-3d1875f494c1) ![icons8-express-js-50](https://github.com/aniket-6234/wordcraft/assets/65860069/bdcaebdd-9e27-4d9c-b817-d86c38052cf3) ![1012818_code_development_logo_nodejs_icon](https://github.com/aniket-6234/wordcraft/assets/65860069/638fbaee-60d6-42f4-999b-4fad3b17e2e7) ![1012822_code_development_logo_mongodb_programming_icon](https://github.com/aniket-6234/wordcraft/assets/65860069/bdd35e16-7f3d-44f9-8d09-6634f7cafcd1) 
+![html5-fill](https://github.com/aniket-6234/wordcraft/assets/65860069/0223dd80-293b-4253-9017-31c972ccbdc9)  ![css3-fill](https://github.com/aniket-6234/wordcraft/assets/65860069/cf2f92c0-ebf0-478f-87af-1441f0638cb2)  ![javascript-fill](https://github.com/aniket-6234/wordcraft/assets/65860069/c89cdcdd-ff18-4416-8332-7919d8b59c80)  ![nodejs-line](https://github.com/aniket-6234/wordcraft/assets/65860069/e12cbcc1-0132-4f5b-97bc-de4b45511a6a) ![reactjs-line](https://github.com/aniket-6234/wordcraft/assets/65860069/fc04a99e-baf2-475d-9e9a-dd32c0c6baab)  ![nodejs-line](https://github.com/aniket-6234/wordcraft/assets/65860069/8a8efe01-0cd6-4c10-a6c1-615ca8a62e2c)
+
+ 
+
+
+
 
 
 
