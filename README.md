@@ -1,5 +1,4 @@
-# WordCraft
-
+# WordCraft ⚡️
 A Social Media Blog Application which is inspired by DEV Community, HashNode and Medium.com, the goal is very simple to provide the better user experience than other compititor with the advanced feature and comes with a responsive design.
 
 #### Live Demo Link: https://wordcraft-weld.vercel.app/login
