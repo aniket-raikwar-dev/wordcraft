@@ -5,6 +5,7 @@ import { api } from "../services/baseApi";
 import { createUserProfileImage } from "../utils/createUserProfile";
 import AliceImage from "../images/NoDataFound.png";
 import { Skeleton } from "antd";
+import { Link } from "react-router-dom";
 
 const { TextArea } = Input;
 
@@ -108,7 +109,7 @@ const CommentSection = ({
         <div className="comment-scrollable">
           {commentData.length === 0 ? (
             <div className="h-full w-full bg-[#fff] flex flex-col justify-center items-center rounded-md">
-              <img className="w-[90%]" src={AliceImage} alt="" />
+              <img className="w-[70%]" src={AliceImage} alt="" />
               <h3 className="work-head commt">No Comments Available.</h3>
               <h5 className="stay-tuned">You are first to comment.</h5>
               {/* <p className="font-medium text-md">No Comments.</p>
@@ -118,15 +119,21 @@ const CommentSection = ({
             <>
               {commentData?.map((comment) => (
                 <div className="flex mt-7 mb-10">
-                  <div className="new-user-profile-post">
+                  <Link
+                    to={`/wordcraft-users/${comment?.user?._id}`}
+                    className="new-user-profile-post"
+                  >
                     {comment?.user?.profilePhoto ? (
                       <img src={comment?.user?.profilePhoto} alt="" />
                     ) : (
                       createUserProfileImage(comment?.user?.name)
                     )}
-                  </div>
+                  </Link>
                   <div style={{ marginTop: "-2px" }} className="pl-3">
-                    <div className="flex items-center">
+                    <Link
+                      to={`/wordcraft-users/${comment?.user?._id}`}
+                      className="flex items-center"
+                    >
                       <p
                         style={{ fontSize: "13px" }}
                         className="user-full-name-post"
@@ -136,8 +143,10 @@ const CommentSection = ({
                       <div className="comment-date">
                         {moment(comment?.createdAt).format("D MMMM, YYYY")}
                       </div>
-                    </div>
-                    <p className="w-[270px]">{comment.description}</p>
+                    </Link>
+                    <p className="w-[270px] break-words">
+                      {comment.description}
+                    </p>
                   </div>
                 </div>
               ))}

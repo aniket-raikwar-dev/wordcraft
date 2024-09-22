@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
-import FrokestImg from "../images/frokest.jpeg";
+import React from "react";
 import Quote from "./Quote";
 import NewUser from "./NewUser";
 import { useLocation } from "react-router-dom";
 import AsanaUser from "../images/verifiedUserArt.png";
 
-const newUserData = [
-  { id: 4, name: "Aniket Raikwar", username: "aniket_raikwar" },
-  { id: 5, name: "Smurti Sahoo", username: "s_sahoo_981" },
-  { id: 6, name: "Sandi Shiva", username: "shiva_009" },
-  { id: 1, name: "Ketan Dabre", username: "ketan_dabre2000" },
-  { id: 2, name: "Sagar Wandile", username: "sagar_wandile01" },
-  { id: 7, name: "Himanshu S", username: "himanshu_s001" },
-  { id: 3, name: "Himanshu S", username: "himanshu_s001" },
-  { id: 9, name: "Himanshu S", username: "himanshu_s001" },
-];
-
 const RightSidebar = () => {
-  const [newUser, setNewUser] = useState(newUserData);
-
   const location = useLocation();
   const showSidebarImage =
     location.pathname.includes("wordcraft-user") ||
@@ -41,7 +27,7 @@ const RightSidebar = () => {
       ) : (
         <div className="follower-div">
           <p className="new-foll-text">New Users</p>
-          <NewUser newUser={newUser} />
+          <NewUser />
         </div>
       )}
       <Quote />

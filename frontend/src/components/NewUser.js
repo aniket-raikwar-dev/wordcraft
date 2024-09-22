@@ -3,8 +3,9 @@ import { api } from "../services/baseApi";
 import { Skeleton } from "antd";
 import { createUserProfileImage } from "../utils/createUserProfile";
 import { jwtDecode } from "jwt-decode";
+import { Link } from "react-router-dom";
 
-const NewUser = ({ newUser }) => {
+const NewUser = () => {
   const [allUsers, setAllUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const token = localStorage.getItem("token");
@@ -59,7 +60,10 @@ const NewUser = ({ newUser }) => {
       ) : (
         allUsers.map((user) => (
           <div key={user?._id} className="new-user-item">
-            <div className="flex items-center">
+            <Link
+              to={`/wordcraft-users/${user?._id}`}
+              className="flex items-center"
+            >
               <div className="new-user-profile">
                 {user?.profilePhoto ? (
                   <img src={user?.profilePhoto} alt="" />
@@ -73,7 +77,7 @@ const NewUser = ({ newUser }) => {
                 </div>
                 <p className="user-name-text">@{user?.username}</p>
               </div>
-            </div>
+            </Link>
             <div
               className={user?.isFollowed ? "btn-following" : "btn-follow"}
               onClick={() => handleFollowed(user?._id)}

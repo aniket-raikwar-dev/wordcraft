@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import FrokestImg from "../images/frokest.jpeg";
 import { Link } from "react-router-dom";
 import { createUserProfileImage } from "../utils/createUserProfile";
 import { useSelector } from "react-redux";
@@ -88,7 +87,10 @@ const BlogPost = ({ key, blogData, allUsers }) => {
       <div key={key} className="post-container">
         <div>
           <div className="flex justify-between items-center">
-            <div className="new-user-item">
+            <Link
+              to={`/wordcraft-users/${blog?.user?._id}`}
+              className="new-user-item"
+            >
               <div className="new-user-profile-post">
                 {blog?.user?.profilePhoto ? (
                   <img src={blog?.user?.profilePhoto} alt="" />
@@ -106,7 +108,7 @@ const BlogPost = ({ key, blogData, allUsers }) => {
                 </p>
                 <p className="user-name-text-post">@{blog?.user?.username}</p>
               </div>
-            </div>
+            </Link>
             <div>
               <p className="outer-publish">Published on: </p>
               <p className="date">
@@ -189,11 +191,12 @@ const BlogPost = ({ key, blogData, allUsers }) => {
           </div>
           <div className="tags-div">
             <div className="flex items-center">
-              {blog?.tags?.map((tag, index) => (
-                <div key={index} className="tag">
-                  {tag}
-                </div>
-              ))}
+              {blog?.tags?.[0] !== "" &&
+                blog?.tags?.map((tag, index) => (
+                  <div key={index} className="tag">
+                    {tag}
+                  </div>
+                ))}
             </div>
             <div className="bookmark-line"></div>
             <div className="shortcut-icon laptop" onClick={handleBookmark}>

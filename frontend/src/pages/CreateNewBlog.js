@@ -151,6 +151,9 @@ const CreateNewBlog = () => {
       setImageFile(null);
       setSelectedTags([]);
       setLoading(false);
+      setTimeout(() => {
+        navigate("/explore");
+      }, 2000);
     } catch (error) {
       let errMessage = error.response.data.message;
       errorMessageToast(errMessage);
@@ -233,9 +236,7 @@ const CreateNewBlog = () => {
               wrapperStyle={{}}
               wrapperClass="grid-wrapper"
             />
-            <h2 className="mt-12 font-medium text-lg lg:text-xl">
-              Publishing Your Blog, It takes some times.
-            </h2>
+            <h2 className="mt-12 font-medium text-lg lg:text-xl">Loading...</h2>
             <p className="mt-1 font-normal text-sm text-[#2d40f0]">
               Being Creative is Awesome.
             </p>
@@ -269,7 +270,7 @@ const CreateNewBlog = () => {
                 width: "100%",
                 height: "38px",
               }}
-              placeholder="Please Select Maximum 3 Tags"
+              placeholder="Select up to 3 tags"
               onChange={handleSelectTags}
               options={tagOptions}
               value={selectedTags}

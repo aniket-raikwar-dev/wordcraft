@@ -190,7 +190,7 @@ const Login = () => {
           </div>
           <div className="auth-bottom-text">
             New User ?{" "}
-            <span onClick={() => navigate("/register")} className="blue-text">
+            <span onClick={() => navigate("/register")} className="blue-text underline">
               Create New Account.
             </span>
           </div>

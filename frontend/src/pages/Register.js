@@ -242,7 +242,7 @@ const Register = () => {
           </div>
           <div className="auth-bottom-text">
             Already have an account ?{" "}
-            <span onClick={() => navigate("/login")} className="blue-text">
+            <span onClick={() => navigate("/login")} className="blue-text underline">
               Log in.
             </span>
           </div>
